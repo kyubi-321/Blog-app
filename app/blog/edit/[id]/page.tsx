@@ -9,7 +9,7 @@ type UpdateBlogParams = {
   id: string;
 };
 const updateBlog = async (data: UpdateBlogParams) => {
-  const res = fetch(`http://localhost:3000/api/blog/${data.id}`, {
+  const res = fetch(`https://blog-app-tau-one.vercel.app/api/blog/${data.id}`, {
     method: "PUT",
     body: JSON.stringify({ title: data.title, description: data.description }),
     //@ts-ignore

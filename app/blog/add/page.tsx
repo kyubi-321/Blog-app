@@ -11,7 +11,7 @@ type props={
 }
 
 const postBlog =async({title,description}: props)=>{
-  const res = fetch("http://localhost:3000/api/blog", {
+  const res = fetch(`${process.env.BASE_URL}/api/blog`, {
     method: "POST",
     body: JSON.stringify({ title, description }),
     //@ts-ignore

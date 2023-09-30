@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 async function fetchBlogs(){
-  const res = await fetch("https://blog-app-tau-one.vercel.app/api/blog" , {
+  const res = await fetch(`${process.env.BASE_URL}/api/blog` , {
     next:{
       revalidate: 10,
     }
