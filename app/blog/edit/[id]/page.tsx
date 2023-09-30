@@ -9,7 +9,7 @@ type UpdateBlogParams = {
   id: string;
 };
 const updateBlog = async (data: UpdateBlogParams) => {
-  const res = fetch(`https://blog-app-tau-one.vercel.app/api/blog/${data.id}`, {
+  const res = fetch(`${process.env.BASE_URL}/api/blog/${data.id}`, {
     method: "PUT",
     body: JSON.stringify({ title: data.title, description: data.description }),
     //@ts-ignore
@@ -28,7 +28,7 @@ const deleteBlog = async (id: string) => {
 };
 
 const getBlogById = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${id}`);
+  const res = await fetch(`${process.env.BASE_URL}/api/blog/${id}`);
   const data = await res.json();
   return data.post;
 };
