@@ -19,7 +19,7 @@ const updateBlog = async (data: UpdateBlogParams) => {
 };
 
 const deleteBlog = async (id: string) => {
-  const res = fetch(`http://localhost:3000/api/blog/${id}`, {
+  const res = fetch(`${process.env.BASE_URL}/blog/${id}`, {
     method: "DELETE",
     //@ts-ignore
     "Content-Type": "application/json",
